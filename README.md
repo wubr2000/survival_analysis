@@ -3,9 +3,9 @@ Days Active on RDC Prediction using Survival Analysis
 
 ## Purpose
 
-Given a new listing on RDC, we want to predict how long it will be active until it becomes pending.
+Given a new listing on RDC, we want to predict how long it will be active (i.e. days until it becomes pending).
 
-## Some Assumtions / Hypothesis
+## Some Assumtions / Hypotheses
 
 1. Homes with more pageviews (especially in first week) sell more quickly
 2. Homes with more pictures sell more quickly (but at some point, more pictures is correlated to higher-priced homes which slows down sale)
@@ -25,15 +25,16 @@ The reason for a two-prongs approach is that for listings with some engagement h
 
 1. Use Kaplan-Meiers survival model for data exploration/visualization and for discovering important features for modeling. For example, below is a Kaplan-Meiers “survival curve” of listings in the Bay Area (using hypothetical data):
 
+![survival-curve](images/SF_Survival_Curve.png)
+
 
 Below is a K-M curve for Homes with >20 photos in listing versus homes with <10 photos in listing (again hypothetical dataset):
+
+![survival-curve](images/Photos_Survival_Curve.png)
 
 
 2. Cox regression for prediction: For building multivariate models (i.e. using property attributes or pageviews) to predict survival of new listings, I used Cox Proportional-Hazard Regression:
 
-
-
-
-
+![cox](images/Cox.png)
 
 
